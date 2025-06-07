@@ -64,8 +64,8 @@ const MobileNavigation = () => {
 
   return (
     <div className="relative">
-      {/* Main Navigation Container */}
-      <div className="h-20 flex items-center justify-around px-2 relative">
+      {/* Compact Navigation Container */}
+      <div className="h-16 flex items-center justify-around px-2 relative">
         {/* Floating Active Background */}
         <AnimatePresence>
           {tabs.map((tab) => {
@@ -76,7 +76,7 @@ const MobileNavigation = () => {
               <motion.div
                 key={`bg-${tab.id}`}
                 layoutId="mobile-active-bg"
-                className={`absolute w-16 h-16 bg-gradient-to-br ${tab.gradient} rounded-2xl opacity-10`}
+                className={`absolute w-14 h-14 bg-gradient-to-br ${tab.gradient} rounded-xl opacity-10`}
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 0.1 }}
                 exit={{ scale: 0, opacity: 0 }}
@@ -98,7 +98,7 @@ const MobileNavigation = () => {
             <Link
               key={tab.id}
               to={tab.path}
-              className="relative flex flex-col items-center justify-center py-2 px-3 min-w-[70px] group"
+              className="relative flex flex-col items-center justify-center py-1.5 px-2 min-w-[60px] group"
             >
               {/* Icon container with modern design */}
               <motion.div 

@@ -149,8 +149,8 @@ const TopBar = ({ currentTab, isMobile }: TopBarProps) => {
                     />
                   </div>
                   
-                  {/* Label with gradient text for active state */}
-                  <span className={`text-xs font-semibold transition-all duration-300 ${
+                  {/* Compact Label */}
+                  <span className={`text-xs font-medium transition-all duration-300 ${
                     isActive 
                       ? `bg-gradient-to-r ${colors.gradient} bg-clip-text text-transparent`
                       : 'text-slate-600'
