@@ -116,11 +116,11 @@ const MobileNavigation = () => {
                   />
                 )}
                 
-                {/* Icon background */}
+                {/* Compact Icon background */}
                 <div className={clsx(
-                  'relative w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300',
+                  'relative w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300',
                   active 
-                    ? `bg-gradient-to-br ${tab.gradient} shadow-lg shadow-${tab.color}-200/50` 
+                    ? `bg-gradient-to-br ${tab.gradient} shadow-md shadow-${tab.color}-200/50` 
                     : 'bg-slate-100 hover:bg-slate-200 group-hover:scale-105'
                 )}>
                   <Icon 

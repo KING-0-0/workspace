@@ -98,27 +98,27 @@ const ShopTab = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(34,197,94,0.15)_1px,transparent_0)] bg-[length:24px_24px]"></div>
       </div>
 
-      <div className="p-6 relative z-10">
+      <div className="p-4 md:p-6 relative z-10">
         <div className="max-w-7xl mx-auto">
-          {/* Header */}
+          {/* Compact Header */}
           <motion.div 
-            className="mb-8"
+            className="mb-4 md:mb-8"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="flex items-center mb-4">
-              <ShoppingBag className="w-8 h-8 text-emerald-500 mr-3" />
-              <h2 className="text-3xl font-bold bg-gradient-to-r from-emerald-600 via-teal-600 to-green-600 bg-clip-text text-transparent">
+            <div className="flex items-center mb-2 md:mb-4">
+              <ShoppingBag className="w-6 h-6 md:w-8 md:h-8 text-emerald-500 mr-2 md:mr-3" />
+              <h2 className="text-xl md:text-3xl font-bold bg-gradient-to-r from-emerald-600 via-teal-600 to-green-600 bg-clip-text text-transparent">
                 Marketplace
               </h2>
             </div>
-            <p className="text-slate-600 text-lg">Discover amazing products from our community</p>
+            <p className="text-slate-600 text-sm md:text-lg">Discover amazing products from our community</p>
           </motion.div>
           
           {/* Search and Filter Bar */}
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4 mb-8"
+            className="flex flex-col sm:flex-row gap-4 mb-4 md:mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}

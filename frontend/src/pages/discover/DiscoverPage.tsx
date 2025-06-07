@@ -84,34 +84,35 @@ const FeedTab = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(139,69,19,0.15)_1px,transparent_0)] bg-[length:24px_24px]"></div>
       </div>
 
-      <div className="max-w-2xl mx-auto p-6 relative z-10">
-        {/* Header with Create Post Button */}
+      <div className="max-w-2xl mx-auto p-4 md:p-6 relative z-10">
+        {/* Compact Header with Create Post Button */}
         <motion.div 
-          className="flex items-center justify-between mb-8"
+          className="flex items-center justify-between mb-4 md:mb-8"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           <div className="flex items-center">
-            <TrendingUp className="w-8 h-8 text-purple-500 mr-3" />
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 bg-clip-text text-transparent">
+            <TrendingUp className="w-6 h-6 md:w-8 md:h-8 text-purple-500 mr-2 md:mr-3" />
+            <h1 className="text-xl md:text-3xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 bg-clip-text text-transparent">
               Discover
             </h1>
           </div>
           <Button
             onClick={() => setShowCreateModal(true)}
             variant="gradient"
-            size="md"
-            icon={<Plus className="w-5 h-5" />}
-            className="shadow-lg shadow-purple-200/50"
+            size="sm"
+            icon={<Plus className="w-4 h-4 md:w-5 md:h-5" />}
+            className="shadow-lg shadow-purple-200/50 text-sm md:text-base"
           >
-            Create Post
+            <span className="hidden sm:inline">Create Post</span>
+            <span className="sm:hidden">Post</span>
           </Button>
         </motion.div>
 
         {/* Toggle: Following vs For You */}
         <motion.div 
-          className="flex bg-white/80 backdrop-blur-md rounded-2xl p-1.5 mb-8 shadow-lg border border-white/20"
+          className="flex bg-white/80 backdrop-blur-md rounded-2xl p-1.5 mb-4 md:mb-8 shadow-lg border border-white/20"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.1 }}

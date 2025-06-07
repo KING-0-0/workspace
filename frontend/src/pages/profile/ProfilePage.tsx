@@ -17,7 +17,7 @@ const ProfileTab = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(251,146,60,0.15)_1px,transparent_0)] bg-[length:24px_24px]"></div>
       </div>
 
-      <div className="p-6 relative z-10">
+      <div className="p-4 md:p-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Profile Header */}
           <motion.div
@@ -25,7 +25,7 @@ const ProfileTab = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Card variant="glass" className="p-8 mb-8 backdrop-blur-xl border-white/20">
+            <Card variant="glass" className="p-4 md:p-8 mb-4 md:mb-8 backdrop-blur-xl border-white/20">
               <div className="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
                 <motion.div 
                   className="relative"
