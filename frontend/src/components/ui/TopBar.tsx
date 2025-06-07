@@ -117,8 +117,8 @@ const TopBar = ({ currentTab, isMobile }: TopBarProps) => {
   if (isMobile) {
     return (
       <div className="relative">
-        {/* Mobile Sub-tabs with modern design */}
-        <div className="flex px-4 py-3">
+        {/* Compact Mobile Sub-tabs */}
+        <div className="flex px-3 py-2">
           {currentSubTabs.map((tab, index) => {
             const Icon = tab.icon;
             const isActive = activeSubTab === tab.id;
@@ -131,19 +131,19 @@ const TopBar = ({ currentTab, isMobile }: TopBarProps) => {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 17 }}
               >
-                <div className={`flex flex-col items-center py-3 px-2 rounded-2xl transition-all duration-300 ${
+                <div className={`flex flex-col items-center py-2 px-1 rounded-xl transition-all duration-300 ${
                   isActive 
-                    ? `${colors.activeBg} ${colors.glowColor} shadow-lg` 
+                    ? `${colors.activeBg} ${colors.glowColor} shadow-md` 
                     : 'hover:bg-slate-50'
                 }`}>
-                  {/* Icon with enhanced styling */}
-                  <div className={`p-2.5 rounded-xl mb-2 transition-all duration-300 ${
+                  {/* Compact Icon */}
+                  <div className={`p-1.5 rounded-lg mb-1 transition-all duration-300 ${
                     isActive 
-                      ? `bg-gradient-to-br ${colors.gradient} shadow-lg ${colors.glowColor}` 
+                      ? `bg-gradient-to-br ${colors.gradient} shadow-md ${colors.glowColor}` 
                       : 'bg-slate-100 hover:bg-slate-200'
                   }`}>
                     <Icon 
-                      className={`w-5 h-5 transition-colors duration-300 ${
+                      className={`w-4 h-4 transition-colors duration-300 ${
                         isActive ? 'text-white' : 'text-slate-600'
                       }`} 
                     />

@@ -41,40 +41,39 @@ const MainLayout = () => {
   if (isMobile) {
     return (
       <div className="h-screen flex flex-col bg-gradient-to-br from-slate-50 via-white to-slate-100">
-        {/* Status Bar Simulation */}
-        <div className="h-6 bg-gradient-to-r from-slate-900 to-slate-800 flex items-center justify-between px-4 text-white text-xs font-medium">
+        {/* Compact Status Bar */}
+        <div className="h-5 bg-gradient-to-r from-slate-900 to-slate-800 flex items-center justify-between px-3 text-white text-xs font-medium">
           <span>9:41</span>
           <div className="flex items-center space-x-1">
-            <div className="flex space-x-1">
-              <div className="w-1 h-1 bg-white rounded-full"></div>
-              <div className="w-1 h-1 bg-white rounded-full"></div>
-              <div className="w-1 h-1 bg-white/50 rounded-full"></div>
+            <div className="flex space-x-0.5">
+              <div className="w-0.5 h-0.5 bg-white rounded-full"></div>
+              <div className="w-0.5 h-0.5 bg-white rounded-full"></div>
+              <div className="w-0.5 h-0.5 bg-white/50 rounded-full"></div>
             </div>
-            <div className="w-6 h-3 border border-white rounded-sm">
-              <div className="w-4 h-1.5 bg-white rounded-sm m-0.5"></div>
+            <div className="w-5 h-2.5 border border-white rounded-sm">
+              <div className="w-3 h-1 bg-white rounded-sm m-0.5"></div>
             </div>
           </div>
         </div>
 
-        {/* Sub-tabs Bar - Modern Design */}
-        <div className="flex-shrink-0 bg-white/80 backdrop-blur-xl border-b border-slate-200/50">
+        {/* Compact Sub-tabs Bar */}
+        <div className="flex-shrink-0 bg-white/90 backdrop-blur-xl border-b border-slate-200/30">
           <TopBar currentTab={currentTab} isMobile={true} />
         </div>
 
-        {/* Content Area - Enhanced with modern background */}
+        {/* Content Area - Maximum space */}
         <div className={`flex-1 overflow-hidden bg-gradient-to-br ${gradientClasses.lightGradient} relative`}>
-          {/* Subtle pattern overlay */}
-          <div className="absolute inset-0 opacity-30">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.15)_1px,transparent_0)] bg-[length:20px_20px]"></div>
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.1)_1px,transparent_0)] bg-[length:16px_16px]"></div>
           </div>
           <div className="relative z-10 h-full">
             <Outlet />
           </div>
         </div>
 
-        {/* Main Tabs Bar - Modern Floating Design */}
-        <div className="flex-shrink-0 p-4 bg-gradient-to-t from-white via-white to-white/95">
-          <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-200/50">
+        {/* Compact Main Tabs Bar */}
+        <div className="flex-shrink-0 px-2 py-2 bg-gradient-to-t from-white via-white/95 to-white/90">
+          <div className="bg-white/95 backdrop-blur-xl rounded-xl shadow-lg shadow-slate-200/30 border border-slate-200/40">
             <MobileNavigation />
           </div>
         </div>
@@ -108,18 +107,28 @@ const MainLayout = () => {
       
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col overflow-hidden relative z-10">
-        {/* Top Global Bar - Modern Design */}
-        <div className="flex-shrink-0 bg-white/80 backdrop-blur-xl border-b border-slate-200/50 shadow-sm">
-          <TopBar currentTab={currentTab} isMobile={false} />
-        </div>
+        {/* Compact Sub-tabs Bar - Only show when needed */}
+        <AnimatePresence>
+          {!sidebarCollapsed && (
+            <motion.div 
+              className="flex-shrink-0 bg-white/70 backdrop-blur-xl border-b border-slate-200/30"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <TopBar currentTab={currentTab} isMobile={false} />
+            </motion.div>
+          )}
+        </AnimatePresence>
         
         {/* Content Area with Enhanced Background */}
         <div className="flex-1 flex overflow-hidden">
           {/* Main Content */}
           <div className={`flex-1 overflow-hidden bg-gradient-to-br ${gradientClasses.lightGradient} relative`}>
             {/* Subtle animated background */}
-            <div className="absolute inset-0 opacity-30">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.2)_1px,transparent_0)] bg-[length:32px_32px] animate-pulse-slow"></div>
+            <div className="absolute inset-0 opacity-20">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.15)_1px,transparent_0)] bg-[length:28px_28px]"></div>
             </div>
             <div className="relative z-10 h-full">
               <Outlet />
